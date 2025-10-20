@@ -1,0 +1,441 @@
+/* 
+VARIABLES CSS - PALETA DE COLORES
+Aquí definimos todos los colores que usaremos en el sitio
+Esto hace fácil cambiar los colores en todo el sitio de una sola vez
+*/
+:root {
+    --primary-color: #8b5cf6;      /* Color principal - Violeta */
+    --secondary-color: #06b6d4;    /* Color secundario - Azul cian */
+    --accent-color: #f59e0b;       /* Color de acento - Naranja */
+    --text-color: #1e293b;         /* Color del texto principal */
+    --bg-color: #ffffff;           /* Color de fondo de la página */
+    --card-bg: #f8fafc;           /* Color de fondo de las tarjetas */
+    --border-color: #e2e8f0;      /* Color de los bordes */
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra suave para elementos */
+    --transition: all 0.3s ease;   /* Transición suave para animaciones */
+}
+
+/* 
+MODO OSCURO
+Cuando se activa el modo oscuro, cambiamos todos los colores
+para que sean más adecuados para visualización nocturna
+*/
+[data-theme="dark"] {
+    --primary-color: #a78bfa;      /* Violeta más claro para modo oscuro */
+    --secondary-color: #22d3ee;    /* Azul cian más brillante */
+    --accent-color: #fbbf24;       /* Naranja más claro */
+    --text-color: #f1f5f9;         /* Texto blanco/gris claro */
+    --bg-color: #0f172a;           /* Fondo azul oscuro */
+    --card-bg: #1e293b;           /* Fondo de tarjetas más oscuro */
+    --border-color: #334155;      /* Bordes más oscuros */
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+/* 
+RESET Y ESTILOS BASE
+Eliminamos los estilos por defecto del navegador
+y establecemos una base consistente para todos los elementos
+*/
+* {
+    margin: 0;                    /* Elimina márgenes por defecto */
+    padding: 0;                   /* Elimina padding por defecto */
+    box-sizing: border-box;       /* Incluye padding y border en el width/height */
+}
+
+/* 
+ESTILOS DEL CUERPO DE LA PÁGINA
+Configuramos la apariencia base de toda la página
+*/
+body {
+    font-family: 'Inter', sans-serif; /* Tipografía moderna y legible */
+    line-height: 1.6;              /* Espaciado entre líneas para mejor lectura */
+    color: var(--text-color);      /* Color del texto usando nuestra variable */
+    background-color: var(--bg-color); /* Color de fondo usando variable */
+    transition: var(--transition); /* Transición suave para cambios de color */
+    min-height: 100vh;            /* Mínimo alto de toda la ventana */
+    display: flex;                 /* Usamos flexbox para el layout */
+    flex-direction: column;        /* Elementos en columna (header, main, footer) */
+}
+
+/* 
+CONTENEDOR PRINCIPAL
+Centra el contenido y limita el ancho máximo
+*/
+.container {
+    width: 100%;                  /* Ocupa todo el ancho disponible */
+    max-width: 1200px;            /* Ancho máximo en pantallas grandes */
+    margin: 0 auto;               /* Centra el contenedor */
+    padding: 0 1rem;              /* Padding a los lados en móviles */
+}
+
+/* 
+HEADER Y NAVEGACIÓN
+La barra superior con logo y menú de navegación
+*/
+header {
+    background-color: var(--bg-color); /* Mismo color que el fondo */
+    border-bottom: 1px solid var(--border-color); /* Línea separadora */
+    position: sticky;              /* Se queda fijo al hacer scroll */
+    top: 0;                       /* Se pega arriba de todo */
+    z-index: 100;                 /* Se asegura que esté por encima de otros elementos */
+}
+
+/* Contenedor de navegación - organiza logo y menú */
+.nav-container {
+    display: flex;                 /* Usa flexbox para alinear elementos */
+    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+    align-items: center;           /* Centra verticalmente los elementos */
+    padding: 1rem 0;              /* Espacio arriba y abajo */
+}
+
+/* Estilo del logo */
+.logo {
+    font-size: 1.5rem;            /* Tamaño grande para el logo */
+    font-weight: 700;             /* Negrita para destacar */
+    color: var(--primary-color);  /* Color principal */
+}
+
+/* Lista de enlaces de navegación */
+.nav-links {
+    display: flex;                 /* Muestra enlaces en línea horizontal */
+    list-style: none;             /* Quita los puntos de la lista */
+    gap: 2rem;                    /* Espacio entre enlaces */
+}
+
+/* Estilo de los enlaces del menú */
+.nav-links a {
+    text-decoration: none;         /* Quita el subrayado */
+    color: var(--text-color);      /* Color del texto */
+    font-weight: 500;              /* Peso de fuente medio */
+    transition: var(--transition); /* Transición suave para hover */
+    padding: 0.5rem 0;            /* Espacio interno para hacer área clickeable más grande */
+}
+
+/* Efecto al pasar el mouse sobre los enlaces */
+.nav-links a:hover {
+    color: var(--primary-color);   /* Cambia al color principal */
+}
+
+/* 
+MENÚ HAMBURGUESA (Para móviles)
+Solo se muestra en pantallas pequeñas
+*/
+.hamburger {
+    display: none;                 /* Oculto por defecto (se muestra en móviles) */
+    cursor: pointer;               /* Cursor de mano al pasar */
+    flex-direction: column;        /* Las rayas una debajo de otra */
+    gap: 4px;                     /* Espacio entre rayas */
+}
+
+/* Cada raya del menú hamburguesa */
+.hamburger span {
+    width: 25px;                  /* Ancho de las rayas */
+    height: 3px;                  /* Alto de las rayas */
+    background-color: var(--text-color); /* Color usando variable */
+    transition: var(--transition); /* Transición para animación */
+}
+
+/* 
+SECCIÓN HERO
+La sección principal de bienvenida en cada página
+*/
+.hero {
+    padding: 3rem 0;              /* Espacio arriba y abajo */
+    text-align: center;           /* Texto centrado */
+    border-bottom: 1px solid var(--border-color); /* Línea separadora */
+}
+
+/* Título principal del hero */
+.hero h1 {
+    font-size: 2.5rem;            /* Tamaño grande para el título */
+    margin-bottom: 1rem;          /* Espacio debajo del título */
+    color: var(--primary-color);  /* Color principal */
+}
+
+/* Texto descriptivo del hero */
+.hero p {
+    font-size: 1.2rem;            /* Tamaño de texto legible */
+    color: var(--secondary-color); /* Color secundario */
+    max-width: 600px;             /* Ancho máximo para mejor lectura */
+    margin: 0 auto;               /* Centra el párrafo */
+}
+
+/* 
+LAYOUT PRINCIPAL
+Organiza el contenido en columnas
+*/
+.main-content {
+    display: grid;                 /* Usa CSS Grid para layout */
+    grid-template-columns: 1fr;   /* Una columna por defecto (móviles) */
+    gap: 2rem;                    /* Espacio entre elementos del grid */
+    padding: 2rem 0;              /* Espacio arriba y abajo */
+}
+
+/* 
+MEDIA QUERY - TABLETS Y ESCRITORIO
+Cuando la pantalla es más grande que 768px, aplicamos estos estilos
+*/
+@media (min-width: 768px) {
+    .main-content {
+        grid-template-columns: 2fr 1fr; /* Dos columnas: 2/3 y 1/3 del espacio */
+    }
+}
+
+/* 
+SECCIONES GENERALES
+Estilos para todas las secciones de contenido
+*/
+section {
+    margin-bottom: 2rem;          /* Espacio entre secciones */
+}
+
+/* Títulos de sección */
+.section-title {
+    margin-bottom: 1.5rem;        /* Espacio debajo del título */
+    font-size: 1.8rem;            /* Tamaño destacado */
+    color: var(--primary-color);  /* Color principal */
+    border-bottom: 2px solid var(--primary-color); /* Línea decorativa */
+    padding-bottom: 0.5rem;       /* Espacio entre texto y línea */
+}
+
+/* 
+CARDS Y ARTÍCULOS
+Elementos que contienen información agrupada
+*/
+.card, article {
+    background-color: var(--card-bg); /* Fondo diferenciado */
+    border-radius: 8px;           /* Esquinas redondeadas */
+    padding: 1.5rem;              /* Espacio interno */
+    margin-bottom: 1.5rem;        /* Espacio entre cards */
+    box-shadow: var(--shadow);    /* Sombra suave */
+    border: 1px solid var(--border-color); /* Borde sutil */
+    transition: var(--transition); /* Transición para efectos hover */
+}
+
+/* Efecto al pasar el mouse sobre cards y artículos */
+.card:hover, article:hover {
+    transform: translateY(-2px);  /* Efecto de levitación */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+/* Títulos dentro de cards y artículos */
+.card h3, article h3 {
+    margin-bottom: 0.5rem;        /* Espacio debajo del título */
+    color: var(--primary-color);  /* Color principal */
+}
+
+/* 
+LISTAS
+Estilos para listas no ordenadas
+*/
+ul {
+    list-style-position: inside;  /* Los puntos dentro del flujo */
+    margin-left: 1rem;            /* Sangría izquierda */
+}
+
+li {
+    margin-bottom: 0.5rem;        /* Espacio entre elementos de lista */
+}
+
+/* 
+ENLACES
+Estilos para todos los enlaces que no son del menú
+*/
+a {
+    color: var(--primary-color);  /* Color principal */
+    text-decoration: none;        /* Sin subrayado por defecto */
+    font-weight: 500;             /* Peso de fuente medio */
+    transition: var(--transition); /* Transición suave */
+}
+
+/* Efecto hover para enlaces */
+a:hover {
+    text-decoration: underline;   /* Subrayado al pasar mouse */
+}
+
+/* 
+CITAS O RESEÑAS
+Para mostrar testimonios o citas textuales
+*/
+blockquote {
+    border-left: 4px solid var(--accent-color); /* Línea lateral de acento */
+    padding-left: 1rem;           /* Espacio a la izquierda */
+    margin: 1rem 0;               /* Espacio arriba y abajo */
+    font-style: italic;           /* Texto en cursiva */
+}
+
+/* Autor de las reseñas */
+.review-author {
+    font-weight: 600;             /* Negrita para destacar */
+    margin-top: 1rem;             /* Espacio arriba */
+    color: var(--accent-color);   /* Color de acento */
+}
+
+/* 
+FORMULARIO DE CONTACTO
+Estilos para el formulario de contacto
+*/
+.contact-form {
+    max-width: 600px;             /* Ancho máximo del formulario */
+    margin: 0 auto;               /* Centra el formulario */
+}
+
+/* Grupos de campos del formulario */
+.form-group {
+    margin-bottom: 1.5rem;        /* Espacio entre campos */
+}
+
+/* Etiquetas de los campos */
+label {
+    display: block;               /* Ocupa toda la línea */
+    margin-bottom: 0.5rem;        /* Espacio debajo de la etiqueta */
+    font-weight: 500;             /* Peso de fuente medio */
+}
+
+/* Campos de texto y textarea */
+input, textarea {
+    width: 100%;                  /* Ocupa todo el ancho disponible */
+    padding: 0.75rem;             /* Espacio interno */
+    border: 1px solid var(--border-color); /* Borde sutil */
+    border-radius: 4px;           /* Esquinas ligeramente redondeadas */
+    background-color: var(--card-bg); /* Mismo fondo que las cards */
+    color: var(--text-color);     /* Color del texto */
+    font-family: inherit;         /* Hereda la tipografía del body */
+    transition: var(--transition); /* Transición suave */
+}
+
+/* Efecto cuando un campo está enfocado (seleccionado) */
+input:focus, textarea:focus {
+    outline: none;                /* Quita el outline por defecto */
+    border-color: var(--primary-color); /* Borde color principal */
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1); /* Sombra suave */
+}
+
+/* 
+BOTONES
+Estilos para todos los botones
+*/
+button {
+    background-color: var(--primary-color); /* Fondo color principal */
+    color: white;                 /* Texto blanco */
+    border: none;                 /* Sin borde */
+    padding: 0.75rem 1.5rem;      /* Espacio interno */
+    border-radius: 4px;           /* Esquinas redondeadas */
+    cursor: pointer;              /* Cursor de mano */
+    font-weight: 500;             /* Peso de fuente medio */
+    transition: var(--transition); /* Transición suave */
+}
+
+/* Efecto hover para botones */
+button:hover {
+    background-color: var(--secondary-color); /* Cambia a color secundario */
+    transform: translateY(-1px);  /* Efecto de levitación suave */
+}
+
+/* 
+FOOTER
+Pie de página
+*/
+footer {
+    background-color: var(--card-bg); /* Mismo fondo que las cards */
+    padding: 2rem 0;              /* Espacio interno */
+    text-align: center;           /* Texto centrado */
+    border-top: 1px solid var(--border-color); /* Línea separadora */
+    margin-top: auto;             /* Empuja el footer al final */
+}
+
+/* 
+TOGGLE DE MODO OSCURO
+Botón para cambiar entre modo claro y oscuro
+*/
+.theme-toggle {
+    background: none;             /* Sin fondo */
+    border: none;                 /* Sin borde */
+    cursor: pointer;              /* Cursor de mano */
+    font-size: 1.2rem;            /* Tamaño del icono */
+    color: var(--text-color);     /* Color del texto */
+    margin-left: 1rem;            /* Espacio a la izquierda */
+    padding: 0.5rem;              /* Espacio interno */
+    border-radius: 50%;           /* Forma circular */
+    transition: var(--transition); /* Transición suave */
+}
+
+/* Efecto hover para el toggle */
+.theme-toggle:hover {
+    background-color: var(--border-color); /* Fondo sutil al pasar mouse */
+}
+
+/* 
+GRID DE PROYECTOS
+Diseño en grid para mostrar proyectos
+*/
+.projects-grid {
+    display: grid;                 /* Usa CSS Grid */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* 
+    auto-fill: crea tantas columnas como quepan
+    minmax(300px, 1fr): cada columna mínimo 300px, máximo 1 fracción del espacio
+    */
+    gap: 1.5rem;                  /* Espacio entre proyectos */
+}
+
+/* 
+MEDIA QUERY - DISPOSITIVOS MÓVILES
+Cuando la pantalla es menor a 768px, aplicamos estos estilos
+*/
+@media (max-width: 768px) {
+    /* En móviles, ocultamos el menú normal y mostramos hamburguesa */
+    .nav-links {
+        display: none;             /* Oculta el menú por defecto */
+        flex-direction: column;    /* Menú vertical cuando se active */
+        position: absolute;        /* Posiciona sobre otros elementos */
+        top: 100%;                 /* Debajo del header */
+        left: 0;                   /* Desde el borde izquierdo */
+        width: 100%;               /* Ocupa todo el ancho */
+        background-color: var(--bg-color); /* Mismo color de fondo */
+        padding: 1rem;             /* Espacio interno */
+        box-shadow: var(--shadow); /* Sombra para destacar */
+        border-top: 1px solid var(--border-color); /* Línea separadora */
+    }
+
+    /* Cuando el menú está activo (se hizo clic en hamburguesa) */
+    .nav-links.active {
+        display: flex;             /* Muestra el menú */
+    }
+
+    /* Mostramos el ícono hamburguesa en móviles */
+    .hamburger {
+        display: flex;             /* Muestra el ícono hamburguesa */
+    }
+
+    /* Animación para transformar hamburguesa en X */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px); /* Rota y mueve primera raya */
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;               /* Hace invisible la segunda raya */
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px); /* Rota y mueve tercera raya */
+    }
+
+    /* Ajustes de tamaño para móviles */
+    .hero h1 {
+        font-size: 2rem;          /* Título más pequeño */
+    }
+
+    .hero p {
+        font-size: 1rem;          /* Texto más pequeño */
+    }
+
+    .section-title {
+        font-size: 1.5rem;        /* Títulos de sección más pequeños */
+    }
+
+    /* En móviles, una sola columna */
+    .main-content {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+}

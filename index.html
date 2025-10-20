@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Define que usamos caracteres especiales como ñ, á, é, etc. -->
+    <meta charset="UTF-8">
+    <!-- Hace que la página se vea bien en celulares y tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Descripción que aparece en Google -->
+    <meta name="description" content="Portafolio de Ana María Acevedo - Desarrolladora Frontend">
+    <!-- Palabras clave para que Google sepa de qué trata la página -->
+    <meta name="keywords" content="desarrolladora frontend, HTML, proyectos, portfolio">
+    <!-- Quién es el autor de la página -->
+    <meta name="author" content="Ana María Acevedo">
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Ana María Acevedo - Desarrolladora Frontend</title>
+    <!-- Prepara la conexión con Google Fonts para cargar más rápido -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Trae la letra "Inter" de Google Fonts en diferentes grosores -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">Ana María Acevedo</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="articulos.html">Artículos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Desarrolladora Frontend</h1>
+            <p>HTML con diseño adecuado, ahora con estilos CSS responsivos</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="main-content">
+            <div>
+                <section>
+                    <h2 class="section-title">Proyectos</h2>
+                    <div class="projects-grid">
+                        <div class="card">
+                            <h3>HTML Only Portfolio</h3>
+                            <p>Portafolio desarrollado únicamente con HTML, enfocado en la estructura semántica.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Calculator</h3>
+                            <p>Calculadora funcional con operaciones básicas y avanzadas.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Quiz App</h3>
+                            <p>Aplicación de cuestionarios interactivos con múltiples categorías.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Countdown Timer</h3>
+                            <p>Temporizador de cuenta regresiva para eventos importantes.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Product Upcoming Page</h3>
+                            <p>Página de presentación para productos próximos a lanzarse.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="section-title">Experiencia Laboral</h2>
+                    <article>
+                        <h3>roadmap.sh</h3>
+                        <p>Resolví todos los proyectos frontend.</p>
+                        <a href="#">Visita mi Perfil</a>
+                    </article>
+                    <article>
+                        <h3>Trabajo de Código Abierto</h3>
+                        <p>Contribuí en 50 proyectos de código abierto. Creé mis propios proyectos con 200 estrellas en GitHub.</p>
+                        <a href="#">Visita mi Perfil de GitHub</a>
+                    </article>
+                </section>
+
+                <section>
+                    <h2 class="section-title">Educación</h2>
+                    <div class="card">
+                        <p>Graduada con 3.76 de 4 CGPA. Gané el Hackathon Acme. Organicé 30 sesiones.</p>
+                        <h3>Cursos que tomé:</h3>
+                        <ul>
+                            <li>Programación Orientada a Objetos</li>
+                            <li>Estructuras de Datos y Algoritmos</li>
+                            <li>Ingeniería Web</li>
+                            <li>Inteligencia Artificial</li>
+                            <li>Interacción Humano-Computadora</li>
+                            <li>Gráficos por Computadora</li>
+                            <li>Sistemas de Gestión de Bases de Datos</li>
+                            <li>Sistemas de Bases de Datos Distribuidas</li>
+                            <li>Matemáticas Discretas</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <div>
+                <section>
+                    <h2 class="section-title">Reseñas de mis Profesores</h2>
+                    <article>
+                        <blockquote>
+                            <p>Ana María fue una estudiante brillante; siempre se destacó con sus tareas.</p>
+                            <footer>
+                                <p class="review-author">Nestor, Profesor Asistente</p>
+                            </footer>
+                        </blockquote>
+                    </article>
+                    <article>
+                        <blockquote>
+                            <p>Ana María demostró excelentes habilidades técnicas y gran dedicación en todos los proyectos.</p>
+                            <footer>
+                                <p class="review-author">María González, Profesora Titular</p>
+                            </footer>
+                        </blockquote>
+                    </article>
+                    <article>
+                        <blockquote>
+                            <p>Una de las estudiantes más comprometidas que he tenido, siempre superando expectativas.</p>
+                            <footer>
+                                <p class="review-author">Carlos Rodríguez, Director del Departamento</p>
+                            </footer>
+                        </blockquote>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© Todos los derechos reservados 2025</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
