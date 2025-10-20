@@ -1,4 +1,4 @@
-// Toggle del menú hamburguesa
+//menú hamburguesa
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -9,7 +9,7 @@ if (hamburger && navLinks) {
     });
 }
 
-// Toggle del modo oscuro
+//modo oscuro
 const themeToggle = document.getElementById('themeToggle');
 const currentTheme = localStorage.getItem('theme') || 'light';
 
